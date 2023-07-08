@@ -17,7 +17,7 @@
     "authentication",
     "authorization",
     "mongodb",
-    "mongoose"
+    "mongoose",
     "Blog"
   ],
   "author": "Rangadurai",
