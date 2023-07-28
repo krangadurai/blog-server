@@ -8,13 +8,13 @@ const dbConfig = require("./app/config/db.config");
 
 const app = express();
 
-app.use(cors({origin:true,credentials: true}));
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: ["http://localhost:3000"],
-//   })
-// );
+// app.use(cors({origin:true,credentials: true}));
+app.use(
+  cors({
+    credentials: true,
+    origin: "http://localhost:3000", // Replace this with the actual front-end URL
+  })
+);
 
 // Parse incoming request bodies of type application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,6 +33,7 @@ const Role = db.role;
 db.mongoose
   .connect(dbConfig.url, {
     useNewUrlParser: true,
+    family: 4,
     useUnifiedTopology: true
   })
   .then(() => {
